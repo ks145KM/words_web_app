@@ -1,0 +1,12 @@
+<h1>Home</h1>
+
+<div class="row">
+    <p>This is home page. input your dictionaries here!</p>
+    <%= form_with(model: @dictionary) do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+
+        <%= f.submit "create dictionary", class: "btn" %>
+    <% end %>
+</div>
+
