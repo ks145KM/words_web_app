@@ -8,5 +8,9 @@
 
         <%= f.submit "create dictionary", class: "btn" %>
     <% end %>
+
+    <%= @dictionaries.each do |dictionary| %>
+        <p><%= link_to dictionary.name, dictionary_url(dictionary) %></p> 
+    <% end %>
 </div>
 

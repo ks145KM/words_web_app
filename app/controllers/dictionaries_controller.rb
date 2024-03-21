@@ -2,6 +2,12 @@ class DictionariesController < ApplicationController
   
   def new
     @dictionary = Dictionary.new
+    @dictionaries = Dictionary.all
+  end
+
+  def show
+    @dictionary = Dictionary.find(params[:id])
+    
   end
 
   def create
