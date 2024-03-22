@@ -10,11 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_20_181129) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_22_164033) do
   create_table "dictionaries", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "words", force: :cascade do |t|
+    t.text "name"
+    t.text "meaning"
+    t.integer "dictionary_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dictionary_id", "created_at"], name: "index_words_on_dictionary_id_and_created_at"
+    t.index ["dictionary_id"], name: "index_words_on_dictionary_id"
+  end
+
+  add_foreign_key "words", "dictionaries"
 end

@@ -10,7 +10,7 @@
     <% end %>
 
     <%= @dictionaries.each do |dictionary| %>
-        <p><%= link_to dictionary.name, dictionary_url(dictionary) %></p> 
+        <p><%= link_to dictionary.name, dictionary_words_path(dictionary) %></p> 
     <% end %>
 </div>
 

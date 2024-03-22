@@ -5,16 +5,13 @@ class DictionariesController < ApplicationController
     @dictionaries = Dictionary.all
   end
 
-  def show
-    @dictionary = Dictionary.find(params[:id])
-    
-  end
 
   def create
     @dictionary = Dictionary.new(dictionary_params)
     if @dictionary.save
       redirect_to root_path
     else
+      @dictionaries = Dictionary.all
       render 'new', status: :unprocessable_entity
     end
   end

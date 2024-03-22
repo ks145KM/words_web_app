@@ -1,0 +1,17 @@
+<h1><%= @dictionary.name %></h1>
+
+<div class="row">
+    <%= form_with(model: [@dictionary, @word], url: dictionary_words_path(@dictionary)) do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.label :meaning %>
+        <%= f.text_field :meaning %>
+    <%= f.submit "add", class: "btn" %>
+    <% end %>
+
+    <%= @words.each do |word| %>
+        <p><%= word.name %></p> 
+    <% end %>
+    
+</div>
+
