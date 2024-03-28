@@ -1,7 +1,8 @@
 <h1><%= @dictionary.name %></h1>
 
 <div class="row">
-    <%= form_with(model: [@dictionary, @word], url: dictionary_words_path(@dictionary)) do |f| %>
+    <!-- URLを指定 -->
+    <%= form_with(model: [@word], url: dictionary_words_path(@dictionary)) do |f| %>
         <%= f.label :name %>
         <%= f.text_field :name %>
         <%= f.label :meaning %>
@@ -10,7 +11,7 @@
     <% end %>
 
     <%= @words.each do |word| %>
-        <p><%= word.name %></p> 
+        <p><%= link_to_review(word.name) %></p>
     <% end %>
     
 </div>
