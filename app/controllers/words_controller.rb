@@ -11,7 +11,8 @@ class WordsController < ApplicationController
     def review
         @dictionary = Dictionary.find(params[:dictionary_id])
         @words = @dictionary.words.all
-        @selected_index = params[:selected_index].to_i
+        @start_index = params[:start_index].to_i
+        @word = @words[@start_index]
     end
 
     def create

@@ -1,4 +1,10 @@
 <h1><%= @dictionary.name %></h1>
 
-<p><%= @words[@selected_index].name %></p>
-<p><%= @words[@selected_index].meaning %></p>
+<div id="start-index" data-json="<%= @start_index.to_json %>" ></div>
+<div id="words_array" data-json="<%= @words.to_json %>" ></div>
+
+<p id="word-name"><%= @word.name %></p>
+<p id="word-meaning"><%= @word.meaning %></p>
+
+<button id="prev-button">Prev</button>
+<button id="next-button">Next</button>
