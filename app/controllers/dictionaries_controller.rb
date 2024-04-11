@@ -16,6 +16,12 @@ class DictionariesController < ApplicationController
     end
   end
 
+  def destroy
+    Dictionary.find(params[:id]).destroy
+    redirect_to root_path
+
+  end
+
 end
 
 private

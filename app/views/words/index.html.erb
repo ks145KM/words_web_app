@@ -1,4 +1,6 @@
 <h1><%= @dictionary.name %></h1>
+<%= button_to 'Delete', @dictionary, method: :delete, data: { confirm: '消しますよ？' } %>
+
 
 <div class="row">
     <!-- URLを指定 -->
