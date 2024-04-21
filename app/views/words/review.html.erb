@@ -1,4 +1,5 @@
 <h1><%= @dictionary.name %></h1>
+<%= link_to "edit", edit_dictionary_word_path(@dictionary,@word), id: "edit-button" %>
 
 <div id="start-index" data-json="<%= @start_index.to_json %>" ></div>
 <div id="words_array" data-json="<%= @words.to_json %>" ></div>

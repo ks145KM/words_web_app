@@ -26,6 +26,13 @@ class WordsController < ApplicationController
         end
     end
 
+    def edit
+        @dictionary = Dictionary.find(params[:dictionary_id])
+        @words = @dictionary.words.all
+        current_id = params[:current_id].to_i
+        @word = @words.find(current_id)
+    end
+
     def word_params
         params.require(:word).permit(:name, :meaning)
     end

@@ -29,10 +29,23 @@ document.addEventListener("turbo:load", function(){
 
     };
 
+    //editをクリックしたときの処理
+    //currentIndexをrailsに渡す
+    const editWord = () => {
+        console.log(currentIndex);
+        let lnk = document.getElementById("edit-button");
+        let param = "?current_id=" + words[currentIndex].id;
+        lnk.setAttribute('href',lnk.href+param);
+    }
+
+    
     let nextButton = document.getElementById("next-button");
     nextButton.addEventListener("click", getNextWord);
 
     let prevButton = document.getElementById("prev-button");
     prevButton.addEventListener("click", getPrevWord);
+
+    let editButton = document.getElementById("edit-button");
+    editButton.addEventListener("click", editWord);
 
 })
