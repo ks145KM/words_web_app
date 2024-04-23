@@ -2,6 +2,7 @@ class WordsController < ApplicationController
 
     include WordsHelper
 
+
     def index
         @dictionary = Dictionary.find(params[:dictionary_id])
         @word = @dictionary.words.new
@@ -29,8 +30,21 @@ class WordsController < ApplicationController
     def edit
         @dictionary = Dictionary.find(params[:dictionary_id])
         @words = @dictionary.words.all
-        current_id = params[:current_id].to_i
-        @word = @words.find(current_id)
+        @current_id = params[:current_id].to_i
+        @word = @words.find(@current_id)
+    end
+
+    def update
+        @dictionary = Dictionary.find(params[:dictionary_id])
+        @words = @dictionary.words.all
+        puts "Current ID--------------------------------------------: #{params[:current_id]}"
+        @word = @words.find(params[:current_id].to_i)
+    
+        if @word.update(word_params)
+          redirect_to root_path
+        else
+          render 'edit'
+        end
     end
 
     def word_params

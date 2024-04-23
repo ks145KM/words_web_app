@@ -1,1 +1,12 @@
 <h1><%= @word.name %></h1>
+
+<!--ここで、@current_idををparamsとして-->
+<%= form_with(model: @word, url: dictionary_word_path(@dictionary, @word, current_id: @current_id), method: :patch) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  
+    <%= f.label :meaning %>
+    <%= f.text_field :meaning %>
+  
+    <%= f.submit "Update", class: "btn" %>
+<% end %>
