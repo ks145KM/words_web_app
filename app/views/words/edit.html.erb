@@ -1,5 +1,7 @@
 <h1><%= @word.name %></h1>
 
+<%= button_to 'delete', dictionary_word_path(@dictionary, @word, current_id: @current_id), method: :delete %>
+
 <!--ここで、@current_idををparamsとして-->
 <%= form_with(model: @word, url: dictionary_word_path(@dictionary, @word, current_id: @current_id), method: :patch) do |f| %>
     <%= f.label :name %>
