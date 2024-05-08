@@ -37,11 +37,10 @@ class WordsController < ApplicationController
     def update
         @dictionary = Dictionary.find(params[:dictionary_id])
         @words = @dictionary.words.all
-        puts "Current ID--------------------------------------------: #{params[:current_id]}"
         @word = @words.find(params[:current_id].to_i)
     
         if @word.update(word_params)
-          redirect_to redirect_to dictionary_words_path
+          redirect_to dictionary_words_path
         else
           render 'edit'
         end

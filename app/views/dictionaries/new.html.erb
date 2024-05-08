@@ -1,16 +1,26 @@
-<h1>Home</h1>
+<div class="center jumbotron">
+<h1>Almighty APP</h1>
 
-<div class="row">
+<div class="center">
     <p>This is home page. input your dictionaries here!</p>
     <%= form_with(model: @dictionary) do |f| %>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-
-        <%= f.submit "create dictionary", class: "btn" %>
-    <% end %>
-
-    <%= @dictionaries.each do |dictionary| %>
-        <p><%= link_to dictionary.name, dictionary_words_path(dictionary) %></p> 
+        <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "form-control" %>
+        </div>
+        <div class="form-group">
+            <%= f.submit "create dictionary", class: "btn btn-primary" %>
+        </div>
     <% end %>
 </div>
 
+</div>
+
+
+<div class="center">
+<%= @dictionaries.each do |dictionary| %>
+    <div class="dir">
+        <%= link_to dictionary.name, dictionary_words_path(dictionary) %>
+    </div>
+<% end %>
+</div>
