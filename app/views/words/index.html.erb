@@ -1,21 +1,35 @@
-<div>
-<h1><%= @dictionary.name %></h1>
-<%= button_to 'Delete', @dictionary, method: :delete, data: { confirm: '消しますよ？' } %>
+<div class="row align-items-end">
+<div class="col-xs-8">
+    <h3><%= @dictionary.name %></h3>
+</div>
+<div class="col-xs-4">
+    <%= button_to 'Delete', @dictionary, method: :delete, class: "btn btn-sm btn-danger" %>
+</div>
 </div>
 
 <div class="row">
     <!-- URLを指定 -->
     <%= form_with(model: [@word], url: dictionary_words_path(@dictionary)) do |f| %>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-        <%= f.label :meaning %>
-        <%= f.text_field :meaning %>
-    <%= f.submit "add", class: "btn" %>
+        <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_area :name , class: "form-control"%>
+        </div>
+        <div class="form-group">
+            <%= f.label :meaning %>
+            <%= f.text_area :meaning , class: "form-control" %>
+        </div>
+        <div class="form-group center">
+            <%= f.submit "add", class: "btn btn-primary" %>
+        </div>
     <% end %>
 
+    <div class="list-group center">
     <%= @words.each do |word| %>
-        <p class="dir"><%= link_to_review(word.name) %></p>
+        <%= link_to_review(word.name) %>
     <% end %>
+    </div>
+
+
     
 </div>
 
