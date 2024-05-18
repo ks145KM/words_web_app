@@ -8,5 +8,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/dictionaries/:dictionary_id/words', to: 'words#create', as: 'add'
+
+
+
 
 end

@@ -13,3 +13,32 @@ section{
     text-align: center;
 }
 
+.list-group .list-group-item {
+    margin-bottom: 5px;
+}
+
+
+.word-container {
+    background-color: rgb(236, 236, 236);
+    width: 500px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid;
+}
+
+.meaning-container {
+    background-color: rgb(236, 236, 236);
+    width: 500px;
+    height: 150px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid;
+    
+}

@@ -1,35 +1,44 @@
-<div class="row align-items-end">
-<div class="col-xs-8">
-    <h3><%= @dictionary.name %></h3>
-</div>
-<div class="col-xs-4">
-    <%= button_to 'Delete', @dictionary, method: :delete, class: "btn btn-sm btn-danger" %>
-</div>
+<div class="row align-items-top" style="padding-bottom: 10px; margin-bottom : 30px; border-bottom: 2px dotted black;">
+    <div class="col-xs-2 center">
+        <h3><%= @dictionary.name %></h3>
+    </div>
+    
+    <div class="col-xs-4">
+        <%= button_to 'Delete', @dictionary, method: :delete, class: "btn btn-sm btn-danger", style: "margin: 15px;" %>
+    </div>
 </div>
 
 <div class="row">
-    <!-- URLを指定 -->
-    <%= form_with(model: [@word], url: dictionary_words_path(@dictionary)) do |f| %>
-        <div class="form-group">
-            <%= f.label :name %>
-            <%= f.text_area :name , class: "form-control"%>
-        </div>
-        <div class="form-group">
-            <%= f.label :meaning %>
-            <%= f.text_area :meaning , class: "form-control" %>
-        </div>
-        <div class="form-group center">
-            <%= f.submit "add", class: "btn btn-primary" %>
-        </div>
-    <% end %>
-
-    <div class="list-group center">
-    <%= @words.each do |word| %>
-        <%= link_to_review(word.name) %>
-    <% end %>
+    <div class="col-xs-6 center">
+        <!-- URLを指定 -->
+        <%= form_with(model: [@word], url: dictionary_words_path(@dictionary)) do |f| %>
+            <div class="form-group">
+                <%= f.label :name %>
+                <%= f.text_area :name , class: "form-control", style: "height: 100px;" %>
+            </div>
+            <div class="form-group">
+                <%= f.label :meaning %>
+                <%= f.text_area :meaning , class: "form-control", style: "height: 150px;" %>
+            </div>
+            <div class="form-group center">
+                <%= f.submit "add", class: "btn btn-primary" , style: "width: 200px" %>
+            </div>
+        <% end %>
     </div>
-
-
     
+    <div class="col-xs-6" style="margin-top: 25px;">
+        <div class="list-group center" style="max-width: 500px; margin: 0 auto;">
+            <% if @words.length==0 %>
+
+            <% else %>
+                <% @words.each do |word| %>
+                    <%= link_to_review(word.name) %>
+                <% end %>
+            <% end %>
+            
+        </div>
+    </div>
 </div>
+
+
 

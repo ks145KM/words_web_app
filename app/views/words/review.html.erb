@@ -1,12 +1,29 @@
-<h1><%= @dictionary.name %></h1>
-<%= link_to "edit", edit_dictionary_word_path(@dictionary,@word), id: "edit-button" %>
-
+<div class="row" style="padding: 10px; margin-bottom : 30px; border-bottom: 2px dotted black;">
+    <div class="col-xs-2 center" >
+        <h3><%= @dictionary.name %></h3>
+    </div>
+    
+    
+    <div class="col-xs-4">
+        <!-- not need to write path  -->
+        <%= link_to image_tag("pencil.svg", width: "45"), edit_dictionary_word_path(@dictionary,@word), id: "edit-button" %>
+        <%= link_to image_tag("list.svg", width: "45"), add_path %>
+    </div>
+</div>
 
 <div id="start-index" data-json="<%= @start_index.to_json %>" ></div>
 <div id="words_array" data-json="<%= @words.to_json %>" ></div>
 
-<p id="word-name"><%= @word.name %></p>
-<p id="word-meaning"><%= @word.meaning %></p>
 
-<button id="prev-button">Prev</button>
-<button id="next-button">Next</button>
+<div class="word-container">
+    <p id="word-name"><%= @word.name %></p>
+</div>
+
+<div class="meaning-container">
+    <p id="word-meaning"><%= @word.meaning %></p>
+</div>
+
+<div class="center">
+    <button id="prev-button">Prev</button>
+    <button id="next-button">Next</button>
+</div>
