@@ -2,12 +2,18 @@
 @import "bootstrap";
 
 body {
-    padding: 60px;
+    padding: 70px;
 }
 
 section{
     overflow: auto;
 }
+
+.custom-navbar-padding {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
 
 .center {
     text-align: center;
@@ -19,26 +25,44 @@ section{
 
 
 .word-container {
-    background-color: rgb(236, 236, 236);
-    width: 500px;
-    height: 100px;
+    background-color: rgb(211, 243, 254);
+    height: 500px;
     margin: 0 auto;
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 10px;
     font-size: 15px;
-    border: 1px solid;
+    overflow: auto;
+    border-radius: 15px;
 }
 
 .meaning-container {
-    background-color: rgb(236, 236, 236);
-    width: 500px;
-    height: 150px;
+    background-color:  rgb(211, 243, 254);
+    height: 500px;
     margin: 0 auto;
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 10px;
     font-size: 15px;
-    border: 1px solid;
-    
+    overflow: auto;
+    border-radius: 15px;
+}
+
+
+#prev-button {
+    width: 50px;
+    height: 50px;
+    background-image: url(../../assets/images/コントロールボタン.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+}
+
+#next-button {
+    width: 50px;
+    height: 50px;
+    background-image: url(../../assets/images/list.svg);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
 }

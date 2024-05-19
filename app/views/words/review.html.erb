@@ -1,13 +1,17 @@
-<div class="row" style="padding: 10px; margin-bottom : 30px; border-bottom: 2px dotted black;">
-    <div class="col-xs-2 center" >
+<div class="row" style="display: flex; align-items: center; justify-content: around; padding: 10px; margin-bottom : 30px; border-bottom: 2px dotted black;">
+    <div class="col-xs-4 center" >
         <h3><%= @dictionary.name %></h3>
     </div>
-    
     
     <div class="col-xs-4">
         <!-- not need to write path  -->
         <%= link_to image_tag("pencil.svg", width: "45"), edit_dictionary_word_path(@dictionary,@word), id: "edit-button" %>
-        <%= link_to image_tag("list.svg", width: "45"), add_path %>
+        <%= link_to image_tag("list.svg", width: "45"), dictionary_words_path %>
+    </div>
+
+    <div class="col-xs-4">
+        <button id="prev-button">P</button>
+        <button id="next-button">N</button>
     </div>
 </div>
 
@@ -15,15 +19,17 @@
 <div id="words_array" data-json="<%= @words.to_json %>" ></div>
 
 
-<div class="word-container">
-    <p id="word-name"><%= @word.name %></p>
+<div class="row" style="display: flex; justify-content: center;">
+
+    <div class="col-xs-5 word-container">
+        <p id="word-name"><%= @word.name %></p>
+    </div>
+
+    <div class="col-xs-5 meaning-container">
+        <p id="word-meaning"><%= @word.meaning %></p>
+    </div>
+
 </div>
 
-<div class="meaning-container">
-    <p id="word-meaning"><%= @word.meaning %></p>
-</div>
 
-<div class="center">
-    <button id="prev-button">Prev</button>
-    <button id="next-button">Next</button>
-</div>
+

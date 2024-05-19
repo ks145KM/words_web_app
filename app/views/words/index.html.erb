@@ -1,10 +1,10 @@
-<div class="row align-items-top" style="padding-bottom: 10px; margin-bottom : 30px; border-bottom: 2px dotted black;">
+<div class="row" style="padding-bottom: 5px; margin-bottom : 30px; border-bottom: 2px dotted black;">
     <div class="col-xs-2 center">
         <h3><%= @dictionary.name %></h3>
     </div>
     
     <div class="col-xs-4">
-        <%= button_to 'Delete', @dictionary, method: :delete, class: "btn btn-sm btn-danger", style: "margin: 15px;" %>
+        <%= button_to image_tag("trash.svg", width: "20"), @dictionary, method: :delete, class: "btn btn-sm", style: "margin: 20px;" %>
     </div>
 </div>
 
@@ -21,7 +21,7 @@
                 <%= f.text_area :meaning , class: "form-control", style: "height: 150px;" %>
             </div>
             <div class="form-group center">
-                <%= f.submit "add", class: "btn btn-primary" , style: "width: 200px" %>
+                <%= f.submit "add", class: "btn btn-primary" , style: "width: 300px" %>
             </div>
         <% end %>
     </div>
