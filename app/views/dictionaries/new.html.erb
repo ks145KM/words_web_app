@@ -20,6 +20,6 @@
 
 <div class="list-group center" style="max-width: 500px; margin: 0 auto;">
     <%= @dictionaries.each do |dictionary| %>
-        <%= link_to dictionary.name, dictionary_words_path(dictionary), class: "list-group-item list-group-item-action" %>
+        <%= link_to normalize(dictionary.name), dictionary_words_path(dictionary), class: "list-group-item list-group-item-action" %>
     <% end %>
 </div>
